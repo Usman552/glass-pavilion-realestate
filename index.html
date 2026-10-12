@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ASHWORTH &amp; VANE — The Glass Pavilion</title>
+  <meta name="description" content="The Glass Pavilion — a cinematic architectural residence, eight acres of stillness, framed in glass. Presented by Ashworth &amp; Vane.">
+  <meta name="theme-color" content="#0b0f17">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=72">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Motion flag: added before first paint so initial hidden states don't flash.
+       main.js removes it again if GSAP fails to load. -->
+  <script>
+    (function () {
+      var r = document.documentElement;
+      r.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('js-motion');
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Preloader (only shown when motion is allowed; main.js runs it) -->
+  <div class="loader" aria-hidden="true">
+    <p class="loader__name">Ashworth &amp; Vane</p>
+    <div class="loader__foot"><span class="loader__count">0</span><span class="loader__pct">%</span></div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <!-- Scroll progress + custom cursor (decorative) -->
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- ======================================================================
+       HEADER
+       ====================================================================== -->
+  <header class="site-header" id="header">
+    <a class="logo" href="#hero" aria-label="Ashworth &amp; Vane — back to top">Ashworth &amp; Vane</a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="#house">The House</a>
+      <a class="nav__link" href="#gallery">Interiors</a>
+      <a class="nav__link" href="#grounds">The Grounds</a>
+      <a class="nav__link" href="#specifications">Specifications</a>
+      <a class="nav__btn" href="#private-viewing">Private Viewing</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="menu-btn__label">Menu</span><i></i><i></i>
+    </button>
+  </header>
+
+  <!-- Full-screen menu (mobile) -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__nav" aria-label="Mobile">
+      <a class="menu__link" style="--i:0" href="#house"><span>01</span>The House</a>
+      <a class="menu__link" style="--i:1" href="#gallery"><span>02</span>Interiors</a>
+      <a class="menu__link" style="--i:2" href="#grounds"><span>03</span>The Grounds</a>
+      <a class="menu__link" style="--i:3" href="#specifications"><span>04</span>Specifications</a>
+      <a class="menu__link" style="--i:4" href="#private-viewing"><span>05</span>Private Viewing</a>
+    </nav>
+    <p class="menu__foot label">Private Residences · Worldwide</p>
+  </div>
+
+  <main id="main">
+
+    <!-- ====================================================================
+         01. HERO — pinned for the first scroll (desktop)
+         ==================================================================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <div class="hero__layer hero__layer--a">
+          <img data-img="hero" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+        <div class="hero__layer hero__layer--b">
+          <img data-img="entrance" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="hero__shade"></div>
+
+      <div class="hero__content">
+        <p class="label hero__eyebrow">Ashworth &amp; Vane presents</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>The Glass</span></span>
+          <span class="line"><span>Pavilion</span></span>
+        </h1>
+        <p class="hero__sub">A cinematic architectural residence, eight acres of stillness, framed in glass.</p>
+      </div>
+
+      <div class="hero__approach" aria-hidden="true">
+        <p class="label label--gold">The Approach</p>
+        <p class="hero__approach-line">Through the garden, into the light.</p>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </section>
+
+    <!-- ====================================================================
+         02. IMMERSIVE ROOM SEQUENCE — pinned, scrubbed (desktop)
+         ==================================================================== -->
+    <section class="rooms" id="house" aria-labelledby="house-title">
+      <h2 class="sr-only" id="house-title">The House</h2>
+      <div class="rooms__stage">
+
+        <article class="room">
+          <div class="room__media">
+            <div class="room__plx"><img data-img="living" loading="lazy" decoding="async"></div>
+            <div class="room__dim"></div>
+          </div>
+          <div class="room__shade"></div>
+          <div class="room__caption">
+            <p class="room__num">01</p>
+            <h3 class="room__title" data-split>The Living Volume</h3>
+            <p class="room__desc" data-split>≈ 120 m² beneath a 4.2 m ceiling — floor-to-ceiling low-iron glass, honed travertine underfoot, a suspended steel hearth.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="room__media">
+            <div class="room__plx"><img data-img="kitchen" loading="lazy" decoding="async"></div>
+            <div class="room__dim"></div>
+          </div>
+          <div class="room__shade"></div>
+          <div class="room__caption">
+            <p class="room__num">02</p>
+            <h3 class="room__title" data-split>The Kitchen</h3>
+            <p class="room__desc" data-split>≈ 40 m² — a single block of book-matched marble, handleless oak joinery, fully integrated appliances.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="room__media">
+            <div class="room__plx"><img data-img="staircase" loading="lazy" decoding="async"></div>
+            <div class="room__dim"></div>
+          </div>
+          <div class="room__shade"></div>
+          <div class="room__caption">
+            <p class="room__num">03</p>
+            <h3 class="room__title" data-split>The Staircase</h3>
+            <p class="room__desc" data-split>Blackened-oak treads cantilevered from one concrete spine, lit from beneath by warm, dimmable ribbons of light.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="room__media">
+            <div class="room__plx"><img data-img="pool" loading="lazy" decoding="async"></div>
+            <div class="room__dim"></div>
+          </div>
+          <div class="room__shade"></div>
+          <div class="room__caption">
+            <p class="room__num">04</p>
+            <h3 class="room__title" data-split>The Water Terrace</h3>
+            <p class="room__desc" data-split>A 25 m infinity pool edged in basalt, dissolving into the valley as the last light leaves the sky.</p>
+          </div>
+        </article>
+
+        <p class="rooms__counter" aria-hidden="true"><span class="rooms__current">01</span> / 04</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         03. STATEMENT
+         ==================================================================== -->
+    <section class="statement" id="statement" aria-labelledby="statement-title">
+      <div class="statement__inner">
+        <div class="statement__copy">
+          <p class="label label--gold" data-reveal>The Arrival</p>
+          <h2 class="statement__headline" id="statement-title" data-split>Arrival is the first act of luxury.</h2>
+          <p class="statement__text" data-reveal>Beyond a quarter-mile of lantern-lit driveway, the pavilion discloses itself slowly — first as a glow between the trees, then as a long horizon of glass above still water. Every threshold has been composed to be felt before it is seen.</p>
+        </div>
+        <figure class="statement__card" data-cursor="Discover">
+          <img data-img="golden" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Marquee strip (scroll-velocity driven) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Eight acres</span><i></i><span>Glass &amp; stone</span><i></i><span>Born of stillness</span><i></i><span>One residence</span><i></i>
+        <span>Eight acres</span><i></i><span>Glass &amp; stone</span><i></i><span>Born of stillness</span><i></i><span>One residence</span><i></i>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         04. HORIZONTAL SCROLL GALLERY — pinned, scrolls sideways (desktop)
+         ==================================================================== -->
+    <section class="hgallery" id="gallery" aria-labelledby="gallery-title">
+      <h2 class="sr-only" id="gallery-title">Interiors</h2>
+      <div class="hgallery__track">
+
+        <article class="hpanel hpanel--text">
+          <span class="hpanel__num">01</span>
+          <h3 class="hpanel__title" data-text="The Threshold">The Threshold</h3>
+          <p class="hpanel__desc">Heavy pivot doors open onto a floating staircase and a single pool of warm light. The house introduces itself quietly.</p>
+        </article>
+        <figure class="hpanel hpanel--photo" data-cursor="Explore">
+          <div class="hpanel__frame"><div class="hpanel__plx"><img data-img="gThreshold"loading="lazy" decoding="async"></div></div>
+        </figure>
+
+        <article class="hpanel hpanel--text">
+          <span class="hpanel__num">02</span>
+          <h3 class="hpanel__title" data-text="The Living Volume">The Living Volume</h3>
+          <p class="hpanel__desc">Double-height glass, a suspended hearth and furniture drawn for the room. Evening arrives here first.</p>
+        </article>
+        <figure class="hpanel hpanel--photo" data-cursor="Explore">
+          <div class="hpanel__frame"><div class="hpanel__plx"><img data-img="gLiving" loading="lazy" decoding="async"></div></div>
+        </figure>
+
+        <article class="hpanel hpanel--text">
+          <span class="hpanel__num">03</span>
+          <h3 class="hpanel__title" data-text="The Kitchen">The Kitchen</h3>
+          <p class="hpanel__desc">Book-matched marble, handleless oak and an island long enough for twelve. Built for slow dinners.</p>
+        </article>
+        <figure class="hpanel hpanel--photo" data-cursor="Explore">
+          <div class="hpanel__frame"><div class="hpanel__plx"><img data-img="gKitchen" loading="lazy" decoding="async"></div></div>
+        </figure>
+
+        <article class="hpanel hpanel--text">
+          <span class="hpanel__num">04</span>
+          <h3 class="hpanel__title" data-text="The Suite">The Suite</h3>
+          <p class="hpanel__desc">A bedroom with a glass wall, framed on the valley. Wake to the river, fall asleep beneath the stars.</p>
+        </article>
+        <figure class="hpanel hpanel--photo" data-cursor="Explore">
+          <div class="hpanel__frame"><div class="hpanel__plx"><img data-img="gSuite" loading="lazy" decoding="async"></div></div>
+        </figure>
+
+      </div>
+      <div class="hgallery__bar" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ====================================================================
+         05. THE VIEW — three glass panes slide apart
+         ==================================================================== -->
+    <section class="view" id="view" aria-labelledby="view-title">
+      <div class="view__text">
+        <div>
+          <p class="label label--gold view__label">Eight acres of valley, unobstructed</p>
+          <h2 id="view-title">the view.</h2>
+        </div>
+      </div>
+      <div class="view__panes">
+        <div class="pane" style="--i:0"><img data-img="valley" loading="lazy" decoding="async"></div>
+        <div class="pane" style="--i:1"><img data-img="valley" data-decorative loading="lazy" decoding="async"></div>
+        <div class="pane" style="--i:2"><img data-img="valley" data-decorative loading="lazy" decoding="async"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         06. EVENINGS / RITUALS
+         ==================================================================== -->
+    <section class="rituals" id="rituals" aria-labelledby="rituals-title">
+      <div class="rituals__stage">
+        <p class="label rituals__label">After dark</p>
+        <figure class="rituals__img rituals__img--a"><img data-img="ritualStairs" loading="lazy" decoding="async"></figure>
+        <figure class="rituals__img rituals__img--b"><img data-img="terrace" loading="lazy" decoding="async"></figure>
+      </div>
+      <h2 class="rituals__line" id="rituals-title">
+        <span class="line"><span>Where evenings</span></span>
+        <span class="line"><span><em>become</em> rituals.</span></span>
+      </h2>
+    </section>
+
+    <!-- ====================================================================
+         06b. THE GROUNDS — amenity index
+         ==================================================================== -->
+    <section class="grounds" id="grounds" aria-labelledby="grounds-title">
+      <div class="grounds__head">
+        <p class="label label--gold" data-reveal>The Grounds</p>
+        <h2 class="grounds__title" id="grounds-title">
+          <span class="line"><span>Beyond</span></span>
+          <span class="line"><span>the <em>glass.</em></span></span>
+        </h2>
+      </div>
+      <ul class="grounds__list">
+        <li class="ground">
+          <span class="ground__n">01</span>
+          <h3 class="ground__name">Private Cinema</h3>
+          <p class="ground__desc">Eighteen reclining seats, acoustic stone walls, a 4K laser projector.</p>
+          <span class="ground__meta">18 seats</span>
+        </li>
+        <li class="ground">
+          <span class="ground__n">02</span>
+          <h3 class="ground__name">Spa &amp; Hammam</h3>
+          <p class="ground__desc">Heated marble, a cold plunge and a treatment room facing the forest.</p>
+          <span class="ground__meta">180 m²</span>
+        </li>
+        <li class="ground">
+          <span class="ground__n">03</span>
+          <h3 class="ground__name">Wine Cellar</h3>
+          <p class="ground__desc">Climate-held below the staircase, with a candlelit tasting table.</p>
+          <span class="ground__meta">1,200 bottles</span>
+        </li>
+        <li class="ground">
+          <span class="ground__n">04</span>
+          <h3 class="ground__name">Tennis Court</h3>
+          <p class="ground__desc">Clay, floodlit and hidden among the pines, ten minutes’ walk from the house.</p>
+          <span class="ground__meta">Floodlit</span>
+        </li>
+        <li class="ground">
+          <span class="ground__n">05</span>
+          <h3 class="ground__name">Guest Pavilion</h3>
+          <p class="ground__desc">A self-contained two-bedroom retreat on the water’s edge.</p>
+          <span class="ground__meta">2 bedrooms</span>
+        </li>
+        <li class="ground">
+          <span class="ground__n">06</span>
+          <h3 class="ground__name">Helipad</h3>
+          <p class="ground__desc">Twelve minutes to the coast. Arrive by air, unseen from the road.</p>
+          <span class="ground__meta">12 min to coast</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ====================================================================
+         07. SPECIFICATIONS
+         ==================================================================== -->
+    <section class="specs" id="specifications" aria-labelledby="specs-title">
+      <div class="specs__head">
+        <p class="label label--gold" data-reveal>Specifications</p>
+        <h2 class="specs__title" id="specs-title" data-reveal>Every measure, considered.</h2>
+      </div>
+      <dl class="specs__grid">
+        <div class="spec">
+          <dt class="spec__label">Land area</dt>
+          <dd class="spec__num"><span class="count" data-count="8" data-decimals="0">8</span><span class="spec__unit">acres</span></dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__label">Built area</dt>
+          <dd class="spec__num"><span class="count" data-count="1240" data-decimals="0">1,240</span><span class="spec__unit">m²</span></dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__label">Bedrooms</dt>
+          <dd class="spec__num"><span class="count" data-count="5" data-decimals="0">5</span><span class="spec__unit">en suite</span></dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__label">Ceiling height</dt>
+          <dd class="spec__num"><span class="count" data-count="4.2" data-decimals="1">4.2</span><span class="spec__unit">metres</span></dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__label">Pool length</dt>
+          <dd class="spec__num"><span class="count" data-count="25" data-decimals="0">25</span><span class="spec__unit">metres</span></dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__label">Garage capacity</dt>
+          <dd class="spec__num"><span class="count" data-count="6" data-decimals="0">6</span><span class="spec__unit">cars</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ====================================================================
+         08. PRIVATE VIEWING — contact
+         ==================================================================== -->
+    <section class="contact" id="private-viewing" aria-labelledby="contact-title">
+      <p class="label label--gold" data-reveal>Private Viewing</p>
+      <h2 class="contact__title" id="contact-title">
+        <span class="line"><span>Arrange a</span></span>
+        <span class="line"><span>private viewing.</span></span>
+      </h2>
+
+      <div class="contact__panel">
+        <form class="form" id="viewing-form" novalidate>
+          <div class="field">
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="e-name">
+            <label for="f-name">Full name</label>
+            <p class="field__error" id="e-name" role="alert"></p>
+          </div>
+          <div class="field">
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder=" " required aria-describedby="e-email">
+            <label for="f-email">Email address</label>
+            <p class="field__error" id="e-email" role="alert"></p>
+          </div>
+          <div class="field">
+            <textarea id="f-msg" name="message" rows="1" placeholder=" "></textarea>
+            <label for="f-msg">Message <span>(optional)</span></label>
+          </div>
+          <div class="form__actions">
+            <button class="btn-fill" type="submit"><span>Request a viewing</span></button>
+          </div>
+        </form>
+
+        <div class="thanks" id="viewing-thanks" hidden tabindex="-1">
+          <p class="label label--gold">Request received</p>
+          <p class="thanks__line">Thank you. A member of our private office will write to you within one business day.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       09. FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="footer__inner" data-reveal>
+      <p class="footer__logo">Ashworth &amp; Vane</p>
+      <p class="label">Private Residences · Worldwide</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#house">The House</a>
+        <a href="#gallery">Interiors</a>
+        <a href="#grounds">The Grounds</a>
+        <a href="#private-viewing">Private Viewing</a>
+        <a class="to-top" href="#hero">Back to top <span aria-hidden="true">↑</span></a>
+      </nav>
+      <p class="footer__copy">© 2026 Ashworth &amp; Vane. A fictional agency — all imagery is placeholder.</p>
+    </div>
+  </footer>
+
+  <!-- Libraries (pinned versions) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
